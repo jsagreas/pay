@@ -1,22 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>ser-wallet 知识库</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
+  <meta name="description" content="ser-wallet 项目知识库文档">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <!-- 主题样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <!-- 代码高亮主题 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+
+  <style>
+    :root {
+      --docsify-example-panels-left-panel-width: 50%;
+      --docsify-example-panels-right-panel-width: 50%;
+    }
+    /* 侧边栏宽度 */
+    .sidebar {
+      width: 280px;
+    }
+    .content {
+      padding-left: 290px;
+    }
+    /* 侧边栏分类标题样式 */
+    .sidebar-nav > ul > li > a {
+      font-weight: bold;
+      font-size: 15px;
+    }
+    /* 导航栏下拉菜单 */
+    .app-nav li ul {
+      min-width: 120px;
+    }
+    /* 搜索框 */
+    .search .input-wrap {
+      border-color: #42b983;
+    }
+    /* 封面按钮 */
+    .cover .btn {
+      border-color: #42b983;
+      color: #42b983;
+    }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">加载中...</div>
+
+  <!-- docsify 配置 -->
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'ser-wallet 知识库',
+      nameLink: '/',
+      repo: '',
+
+      // 加载侧边栏
+      loadSidebar: true,
+      // 侧边栏自动显示当前目录的标题层级
+      subMaxLevel: 3,
+      // 自动将标题作为侧边栏目录
+      autoHeader: true,
+
+      // 加载顶部导航栏
+      loadNavbar: true,
+
+      // 自动跳转到页面顶部
+      auto2top: true,
+
+      // 路由模式：hash
+      routerMode: 'hash',
+
+      // 小屏幕下合并导航栏到侧边栏
+      mergeNavbar: true,
+
+      // 搜索插件配置
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜索文档...',
+        noData: '没有找到结果',
+        depth: 6,
+        hideOtherSidebarContent: false,
+      },
+
+      // 代码复制插件
+      copyCode: {
+        buttonText: '复制',
+        errorText: '复制失败',
+        successText: '已复制'
+      },
+
+      // 分页导航
+      pagination: {
+        previousText: '上一篇',
+        nextText: '下一篇',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
+      // 字数统计
+      count: {
+        countable: true,
+        language: 'chinese',
+        position: 'top',
+      },
+
+      // 页脚
+      formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
+
+      // tabs 插件
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true,
+      },
     }
   </script>
-  <!-- Docsify v4 -->
+
+  <!-- Docsify v4 核心 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- 搜索插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+
+  <!-- 代码复制插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+
+  <!-- 代码高亮 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
+
+  <!-- Mermaid 图表插件 -->
+  <script src="//cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: false, theme: 'default' });
+  </script>
+
+  <!-- 分页导航插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+
+  <!-- 字数统计插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-count@1/dist/countable.min.js"></script>
+
+  <!-- 图片缩放插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+  <!-- 回到顶部插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-scroll-to-top@1/dist/docsify-scroll-to-top.min.js"></script>
+
+  <!-- Tabs 插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 </body>
 </html>
